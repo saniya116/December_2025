@@ -1,0 +1,22 @@
+Garbage Collection in Java
+Garbage Collection (GC) in Java is a process by which the JVM automatically frees memory by removing objects 
+that are no longer in use. When objects are created inside a program, they are stored in the heap memory. If an object is not referenced by 
+any part of the program, it becomes useless. Garbage Collector identifies such objects and deletes them to make memory available for future objects.
+Why Garbage Collection is needed?
+To avoid memory leaks
+To efficiently use heap memory
+To improve program performance
+To manage memory automatically without developer effort
+How Garbage Collection works?
+JVM continuously monitors objects in the heap:
+If no active reference is pointing to an object, JVM marks it as eligible for garbage collection
+The Garbage Collector removes those unused objects and reclaims memory
+Java uses different algorithms for garbage collection like Mark and Sweep, Copying, and Generational GC.
+Explicit Request for GC
+Developers can request garbage collection using:
+System.gc();
+But this is not guaranteed because JVM decides the best time to run the Garbage Collector.
+Finalization (Deprecated Concept)
+Before deleting an object, GC used to call a special method called:
+protected void finalize()
+But now, it is deprecated in modern Java versions due to performance issues.
