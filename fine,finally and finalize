@@ -1,0 +1,33 @@
+Theory Answer: Difference between final, finally, and finalize() in Java
+1.final (Keyword)
+final is a modifier in Java used to restrict the user in different ways.
+Uses of final:
+1. final variable – value cannot be changed
+final int x = 10; 
+2. final method – cannot be overridden
+class A {
+    final void display() {}
+}
+3. final class – cannot be inherited
+final class Test {}
+Purpose: To prevent modification.
+2️.finally (Block)
+finally is used with try–catch blocks.
+It always executes whether an exception occurs or not.
+Example:
+try {
+    int a = 10 / 0;
+} catch (Exception e) {
+    System.out.println("Exception handled");
+} finally {
+    System.out.println("Finally block executed");
+}
+Purpose: To execute important cleanup code
+(like closing files, database connections, etc.)
+3️.finalize() (Method)
+finalize() is a method defined in Object class, called by the Garbage Collector before an object is destroyed.
+Example:
+protected void finalize() {
+    System.out.println("Object cleaned before deletion");
+}
+)
