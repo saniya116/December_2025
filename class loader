@@ -1,0 +1,34 @@
+Java Theory Question
+Explain Class Loader in Java and its types
+Answer:
+In Java, the Class Loader is a part of the JVM responsible for loading class files into memory at runtime. Java follows the principle of “Load classes only when needed”, which is called Lazy Loading.
+Class loaders load .class files from different sources like the local file system, JAR files, or the network.
+Types of Class Loaders in Java
+1. Bootstrap Class Loader
+It is the first class loader.
+Loads core Java classes such as java.lang, java.util.
+Written in native code (C/C++).
+Example:
+Object, String, System
+2.Extension (Platform) Class Loader
+Loads classes from the extension libraries.
+Path:
+jre/lib/ext
+Example:
+javax.sql
+3. Application Class Loader
+Loads classes from the classpath.
+Handles user-defined classes.
+Example:
+YourProject classes
+Working of Class Loader (Delegation Model)
+Java uses a parent-first delegation model:
+1. Application Class Loader → asks Extension Loader
+2. Extension Loader → asks Bootstrap Loader
+3. If parent can’t load → child loads the class
+This ensures security and avoids duplicate class loading.
+Why Class Loader is Important?
+Provides security
+Supports dynamic class loading
+
+Helps in modular Java applications
